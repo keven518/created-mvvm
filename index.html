@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <span v-text="message"></span> <br>
+    {{message}} <br>
+    <input type="text" v-model="message">
+    <div v-text="name"></div>
+  </div>
+
+  <script src="./js/observer.js"></script>
+  <script src="./js/TemplateCompiler.js"></script>
+  <script src="./js/watcher.js"></script>
+  <script src="./js/mvvm.js"></script>
+
+  <!--3. 编写脚本-->
+  <script>
+    var vm = new MVVM({
+      // 挂载视图
+      el: "#app",
+      // el: document.querySelect('#app'),
+      // 定义数据
+      data: {
+        message: '今天有一点小雨，但是还是来了很多同学！！',
+        name: '柯文'
+      }
+    })
+  </script>
+</body>
+</html>
